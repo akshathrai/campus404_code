@@ -1,0 +1,268 @@
+/* Admin dashboard frame and page-level layouts. Component CSS lives beside components. */
+
+.ap-root {
+  --ap-navy: #14213d;
+  --ap-blue: #175cff;
+  --ap-line: #dbe5f2;
+  --ap-text: #14213d;
+  --ap-muted: #64748b;
+  --ap-soft: #edf5ff;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  color: var(--ap-text);
+  background: #f6f8fb;
+  font-family: var(--font-body, Inter, system-ui, sans-serif);
+}
+
+.ap-root *,
+.ap-root *::before,
+.ap-root *::after {
+  box-sizing: border-box;
+}
+
+.ap-root button,
+.ap-root input,
+.ap-root select,
+.ap-root textarea {
+  font: inherit;
+}
+
+.ap-content {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f6f8fb;
+}
+
+.ap-body {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 20px 24px 24px;
+  background: #f6f8fb;
+}
+
+.ap-page {
+  min-width: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.ap-denied {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f6f8fb;
+  color: #14213d;
+  font-family: var(--font-body, Inter, system-ui, sans-serif);
+}
+
+.ap-denied__card {
+  width: min(420px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid #dbe5f2;
+  border-radius: 8px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.ap-denied__card svg {
+  color: #175cff;
+}
+
+.ap-denied__card h1 {
+  margin: 0;
+  color: #14213d;
+  font-size: 1.35rem;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.ap-denied__card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.ap-denied__link {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid #175cff;
+  border-radius: 8px;
+  background: #175cff;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ap-denied__link:hover {
+  background: #0f4be0;
+  color: #ffffff;
+}
+
+.ap-ops-hero,
+.ap-metric-card,
+.ap-ops-table {
+  border: 1px solid var(--ap-line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.ap-ops-hero {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.ap-ops-hero p,
+.ap-ops-table header p {
+  margin: 0;
+  color: var(--ap-blue);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.ap-ops-hero h2,
+.ap-ops-table h3 {
+  margin: 3px 0 0;
+  color: var(--ap-text);
+  font-size: 1rem;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.ap-ops-hero span {
+  display: block;
+  margin-top: 4px;
+  color: var(--ap-muted);
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.ap-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.ap-metric-card {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+}
+
+.ap-metric-card div {
+  min-width: 0;
+}
+
+.ap-metric-card span {
+  display: block;
+  color: var(--ap-muted);
+  font-size: 0.76rem;
+  font-weight: 780;
+}
+
+.ap-metric-card strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--ap-text);
+  font-size: 1rem;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.ap-metric-card p {
+  margin: 4px 0 0;
+  color: #07834f;
+  font-size: 0.72rem;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.ap-ops-table {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ap-ops-table header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--ap-line);
+}
+
+.ap-table-scroll {
+  min-width: 0;
+  overflow: auto;
+}
+
+.ap-ops-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.ap-ops-table th,
+.ap-ops-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #edf2f7;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.ap-ops-table th {
+  background: #f8fbff;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.ap-ops-table td {
+  color: #24344d;
+  font-weight: 650;
+}
+
+.ap-ops-table tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 1040px) {
+  .ap-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .ap-body {
+    padding: 14px;
+  }
+
+  .ap-ops-hero,
+  .ap-metric-card {
+    align-items: flex-start;
+  }
+}
